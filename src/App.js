@@ -40,11 +40,56 @@ class Texts extends React.Component{
   }
 }
 
+class ThankYou extends React.Component{
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      taps: 0,
+      hide: false,
+      unhide: true
+    }
+
+    this.handleTap = this.handleTap.bind(this);
+  }
+
+  handleTap(){
+    this.setState({
+      taps: this.state.taps + 1
+    });
+
+    if (this.state.taps === 2){
+      window.location.reload();
+    } 
+  };
+
+  render(){
+
+    return(
+      <div onClick={this.handleTap} className={'thank-you-container' + (this.props.show === true ? ' show-thank-you' : '') + (this.state.hide === true ? ' hide' : '') }>
+        <img src={illustration} alt="Thank You" className='noselect' />
+        <div className='finalRating'>
+          <p>You selected {this.props.rating} out of 5</p>
+        </div>
+        <div className='texts-container'>
+          <h1>Thank You!</h1>
+          <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get it touch!</p>
+        </div>
+      </div>
+    )
+  }
+}
+
+ThankYou.defaultProps = {
+    rating: 0
+}
+
 class RatingsNumbers extends React.Component{
 
   state = {
     show: false,
-    rate: ''
+    rate: 0
   }
 
   render(){
@@ -75,30 +120,12 @@ class RatingsNumbers extends React.Component{
   }
 }
 
-class ThankYou extends React.Component{
-  render(){
-
-    return(
-      <div className={'thank-you-container' + (this.props.show === true ? ' show-thank-you' : '') }>
-        <img src={illustration} alt="Thank You" />
-        <div className='finalRating'>
-          <p>You selected {this.props.rating} out of 5</p>
-        </div>
-        <div className='texts-container'>
-          <h1>Thank You!</h1>
-          <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get it touch!</p>
-        </div>
-      </div>
-    )
-  }
-}
-
 class Rating extends React.Component{
   constructor(props){
     super(props);
 
     this.state = {
-      activeRating: '',
+      activeRating: 0,
       ratings: 
       [{
         id: 1,

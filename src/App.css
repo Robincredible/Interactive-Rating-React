@@ -263,9 +263,19 @@ p{
   line-height: 1.5;
 }
 
+.thank-you-container img{
+  pointer-events: none;
+}
+
 .thank-you-container.show-thank-you{
   opacity: 1;
   pointer-events: all;
+  transition: 0.4s;
+}
+
+.thank-you-container.show-thank-you.hide{
+  opacity: 0;
+  pointer-events: none;
   transition: 0.4s;
 }
 
@@ -274,7 +284,7 @@ p{
   border-radius: 60px;
   color: hsl(25, 97%, 53%);
   max-width: max-content;
-  padding: 12px 36px 6px;
+  padding: 12px 36px 7px;
   margin: 40px auto;
   font-weight: 500;
 }
