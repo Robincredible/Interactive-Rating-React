@@ -119,6 +119,17 @@ p{
   font-size: 0.9em;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
 .App {
   text-align: center;
   background: hsl(0, 0%, 0%);
@@ -290,39 +301,110 @@ p{
 }
 
 @media screen and (max-width: 800px){
+
   .thank-you-container{
     padding: 60px 20px;
   }
 
   .ratings-numbers div{
-    height: 72px;
-    width: 72px;
+    height: 90px;
+    width: 90px;
+  }
+
+  .ratings-numbers label{
+    font-size: 1.5em;
   }
 
 }
 
 @media screen and (max-width: 640px){
+
   .thank-you-container{
     padding: 60px 0px;
   }
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 570px){
+
   .ratings-numbers{
-    justify-content: space-evenly;
+    justify-content: center;
+    margin: 40px auto;
   }
 
   .ratings-numbers div{
-    height: 52px;
-    width: 52px;
+    height: 100px;
+    width: 100px;
+    margin: 10px 20px;
   }
+
+  .ratings-numbers label{
+    font-size: 2em;
+  }
+
+  .thank-you-container{
+    padding: 110px 0px;
+  }
+
+  .thank-you-container .texts-container {
+    margin: 60px auto 0px;
+    padding: 12px 6px;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+
+  .ratings-numbers div{
+    margin: 10px;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+
+  .ratings-numbers div{
+    margin: 10px;
+  }
+
+  .ratings-numbers label{
+    font-size: 1.6em;
+  }
+
+}
+
+@media screen and (max-width: 440px){
+
+  .ratings-numbers div{
+    height: 90px;
+    width: 90px;
+  }
+
 }
 
 @media screen and (max-width: 420px){
 
-  .ratings-numbers div{
-    height: 45px;
-    width: 45px;
+  .thank-you-container{
+    padding: 160px 0px;
   }
+
+  .ratings-numbers div {
+    height: 70px;
+    width: 70px;
+    margin: 10px;
+  }
+
+}
+
+@media screen and (max-width: 350px){
+
+  .ratings-numbers div {
+    height: 54px;
+    width: 54px;
+  }
+
+  .ratings-numbers label{
+    font-size: 1.5em;
+  }
+  
 }

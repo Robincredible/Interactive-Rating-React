@@ -67,7 +67,7 @@ class RatingsNumbers extends React.Component{
       <div>
         <form onSubmit={handleSubmit} action="#" className="ratings-form" id="ratingsForm" name="ratingsForm">
           <Rating />
-          <button className="submit" type="submit" value="submit">Submit</button>
+          <button className="submit noselect" type="submit" value="submit">Submit</button>
         </form>
         <ThankYou rating={this.state.rate} show={this.state.show}/>
       </div>
@@ -76,9 +76,6 @@ class RatingsNumbers extends React.Component{
 }
 
 class ThankYou extends React.Component{
-  // constructor(props){
-  //   super(props);
-  // }
   render(){
 
     return(
@@ -105,23 +102,23 @@ class Rating extends React.Component{
       ratings: 
       [{
         id: 1,
-        className: 'rating-number'
+        className: 'rating-number noselect'
       },
       {
         id: 2,
-        className: 'rating-number'
+        className: 'rating-number noselect'
       },
       {
         id: 3,
-        className: 'rating-number'
+        className: 'rating-number noselect'
       },
       {
         id: 4,
-        className: 'rating-number'
+        className: 'rating-number noselect'
       },
       {
         id: 5,
-        className: 'rating-number'
+        className: 'rating-number noselect'
       }]
     }
 
