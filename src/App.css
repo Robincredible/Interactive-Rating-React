@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
 /*
 Animations generated using Bounce JS
@@ -106,19 +106,40 @@ Animations generated using Bounce JS
   100% { -webkit-transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
 }
 
+.App-header {
+  background-color: hsl(216, 12%, 8%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+div{
+  box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5, h6, p{
   margin: 0;
 }
 
 h1{
-  font-size: 1.5em;
+  font-size: 32px;
   margin: 0.2em auto;
 }
 
 p{
-  font-size: 0.9em;
+  font-size: 18px;
 }
 
+/* To remove the highlighting portion when on mobile and improve UI desin in general(even on desktop)....this is not recommended though, as it degrades the accessibility of the site 
+for users without a mouse(i.e. using only the keyboard, among others). Used it only for the sake of the design with regards to this project. */
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -142,10 +163,11 @@ p{
 }
 
 .ratings-main-container{
-  background-color: hsl(213, 19%, 18%);
+  background: linear-gradient(to bottom, hsl(213, 19%, 18%) 10%, hsl(213, 19%, 16%) 45%, hsl(213, 19%, 14%) 100%);
+  /*background-color: hsl(213, 19%, 18%);*/
   border-radius: 40px;
-  padding: 40px;
-  max-width: 600px;
+  padding: 45px;
+  max-width: 500px;
   -webkit-animation: swoosh 7000ms linear both;
   animation: swoosh 7000ms linear both;
 }
@@ -156,7 +178,7 @@ p{
   height: 56px;
   width: 56px;
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: 40px;
 }
 
 .star-icon-container img{
@@ -170,22 +192,27 @@ p{
 
 .texts-container{
   text-align: left;
+  line-height: 1.6;
+  color: hsl(217, 12%, 63%);
+}
+.texts-container h1{
+  color: hsl(0, 0%, 100%);
 }
 
 .ratings-numbers{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 60px auto;
+  margin: 35px auto;
 }
 
 .ratings-numbers div{
   position: relative;
   background-color: hsl(213, 19%, 24%);
   border-radius: 100%;
-  height: 82px;
-  width: 82px;
-  transition: 1s;
+  height: 58px;
+  width: 58px;
+  transition: 0.4s;
   transform: scale(1);
   cursor: pointer;
 }
@@ -206,16 +233,21 @@ p{
 .ratings-numbers label{
   position: absolute;
   left: 50%;
-  top: 54%;
+  top: 51%;
   transform: translate(-50%, -50%);
-  font-size: 1.3em;
+  font-size: 22px;
   color: hsl(216, 12%, 54%);
   cursor: pointer;
+  font-weight: 700;
 }
 
 .ratings-numbers div:hover label,
 .ratings-numbers div.selected label{
   color: hsl(0, 0%, 100%);
+}
+
+.ratings-numbers div.selected label{
+  top: 54%;
 }
 
 .submit{
@@ -226,11 +258,11 @@ p{
   border: none;
   border-radius: 60px;
   width: 100%;
-  padding: 16px 40px;
+  padding: 12px 40px;
   text-transform: uppercase;
   font-family: 'Overpass', sans-serif;
-  font-size: 0.8em;
-  letter-spacing: 1px;
+  font-size: 20px;
+  letter-spacing: 2px;
   cursor: pointer;
 }
 
@@ -241,30 +273,38 @@ p{
 }
 
 .thank-you-container{
-  background-color: hsl(213, 19%, 18%);
-  max-width: 600px;
+  background: linear-gradient(to bottom, hsl(213, 19%, 18%) 10%, hsl(213, 19%, 16%) 45%, hsl(213, 19%, 14%) 100%);
+  max-width: 100%;
   width: 100%;
   height: auto;
   border-radius: 40px;
   padding: 50px 40px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   opacity: 0;
   pointer-events: none;
   transition: 0.4s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thank-you-container *{
+  flex-basis: 100%;
+  align-self: center;
 }
 
 .thank-you-container .texts-container{
-  margin: 40px auto 0px;
   text-align: center;
-  padding: 12px 6px 0px;
+  padding: 12px 6px;
   line-height: 1.5;
 }
 
 .thank-you-container img{
   pointer-events: none;
+  flex-basis: 50%;
+  margin: 20px auto;
 }
 
 .thank-you-container.show-thank-you{
@@ -285,136 +325,38 @@ p{
   color: hsl(25, 97%, 53%);
   max-width: max-content;
   padding: 12px 36px 7px;
-  margin: 40px auto;
+  margin: 20px auto;
   font-weight: 500;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: hsl(216, 12%, 8%);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@media screen and (max-width: 800px){
-
-  .thank-you-container{
-    padding: 60px 20px;
-  }
-
-  .ratings-numbers div{
-    height: 90px;
-    width: 90px;
-  }
-
-  .ratings-numbers label{
-    font-size: 1.5em;
-  }
-
-}
-
-@media screen and (max-width: 640px){
-
-  .thank-you-container{
-    padding: 60px 0px;
-  }
-
-}
-
-@media screen and (max-width: 570px){
-
-  .ratings-numbers{
-    justify-content: center;
-    margin: 40px auto;
-  }
-
-  .ratings-numbers div{
-    height: 100px;
-    width: 100px;
-    margin: 10px 20px;
-  }
-
-  .ratings-numbers label{
-    font-size: 2em;
-  }
-
-  .thank-you-container{
-    padding: 110px 0px;
-  }
-
-  .thank-you-container .texts-container {
-    margin: 60px auto 0px;
-    padding: 12px 6px;
-  }
-
-}
-
-@media screen and (max-width: 500px){
-
-  .ratings-numbers div{
-    margin: 10px;
-  }
-
-}
-
-@media screen and (max-width: 500px){
-
-  .ratings-numbers div{
-    margin: 10px;
-  }
-
-  .ratings-numbers label{
-    font-size: 1.6em;
-  }
-
-}
-
-@media screen and (max-width: 440px){
-
-  .ratings-numbers div{
-    height: 90px;
-    width: 90px;
-  }
-
 }
 
 @media screen and (max-width: 420px){
 
-  .thank-you-container{
-    padding: 160px 0px;
+  .ratings-numbers{
+    justify-content: center;
   }
 
-  .ratings-numbers div {
-    height: 70px;
-    width: 70px;
-    margin: 10px;
+  .ratings-numbers div{
+    height: 64px;
+    width: 64px;
+    margin: 10px 12px;
+  }
+
+  .thank-you-container{
+    height: 100%;
+    align-content: center;
   }
 
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 353px){
 
   .ratings-numbers div {
-    height: 54px;
-    width: 54px;
+    height: 52px;
+    width: 52px;
   }
 
   .ratings-numbers label{
-    font-size: 1.5em;
+    font-size: 20px;
   }
   
 }

@@ -54,12 +54,13 @@ class ThankYou extends React.Component{
     this.handleTap = this.handleTap.bind(this);
   }
 
+  //this is just an easter egg for double clicking/tapping on the thank you section used for debugging on browsers without the reload functionality(i.e. facebook messenger, instagram... etc.)
   handleTap(){
-    this.setState({
-      taps: this.state.taps + 1
-    });
+    this.setState(state => ({
+      taps: state.taps + 1
+    }));
 
-    if (this.state.taps === 2){
+    if (this.state.taps >= 1){
       window.location.reload();
     } 
   };
@@ -94,22 +95,25 @@ class RatingsNumbers extends React.Component{
 
   render(){
 
+    //get the data of the form to render in the thank you section
+    //went with a form tag to be able to handle the action if the form does need to go somewhere
     const handleSubmit = (event) => {
       event.preventDefault();
 
       let formData = new FormData(document.forms.ratingsForm);
       let ratingSubmit = formData.get('ratingSubmission');
 
-      this.setState({
-        show: true,
-        rate: ratingSubmit
-      });
-
+      if (ratingSubmit > 0){
+        this.setState({
+          show: true,
+          rate: ratingSubmit
+        });
+      }
 
     }
 
     return(
-      <div>
+      <div className="form-container">
         <form onSubmit={handleSubmit} action="#" className="ratings-form" id="ratingsForm" name="ratingsForm">
           <Rating />
           <button className="submit noselect" type="submit" value="submit">Submit</button>
@@ -152,6 +156,7 @@ class Rating extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
 
+  //get the current selected number's id to apply the class
   handleClick = id => {
     this.setState({
       activeRating: id
@@ -171,6 +176,7 @@ class Rating extends React.Component{
               )
             })
           }
+          {/* this input element's value property is rendered with the id of the current selected div of this component to be able to give the input data into the form tag */}
           <input type="hidden" id="ratingSubmission" name='ratingSubmission' value={this.state.activeRating} />
       </div>
     )
