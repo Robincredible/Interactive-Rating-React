@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Interactive-Rating-React/static/css/main.1a4743c8.css",
-    "main.js": "/Interactive-Rating-React/static/js/main.3563fbb0.js",
+    "main.css": "/Interactive-Rating-React/static/css/main.71251b4f.css",
+    "main.js": "/Interactive-Rating-React/static/js/main.528110ac.js",
     "static/js/787.fb86a8ee.chunk.js": "/Interactive-Rating-React/static/js/787.fb86a8ee.chunk.js",
     "static/media/ty.svg": "/Interactive-Rating-React/static/media/ty.d74a66b551b99ae110b5362ed63106bf.svg",
     "index.html": "/Interactive-Rating-React/index.html",
     "static/media/icon-star.svg": "/Interactive-Rating-React/static/media/icon-star.12766a8d207af861a70f92500634c8be.svg",
-    "main.1a4743c8.css.map": "/Interactive-Rating-React/static/css/main.1a4743c8.css.map",
-    "main.3563fbb0.js.map": "/Interactive-Rating-React/static/js/main.3563fbb0.js.map",
+    "main.71251b4f.css.map": "/Interactive-Rating-React/static/css/main.71251b4f.css.map",
+    "main.528110ac.js.map": "/Interactive-Rating-React/static/js/main.528110ac.js.map",
     "787.fb86a8ee.chunk.js.map": "/Interactive-Rating-React/static/js/787.fb86a8ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a4743c8.css",
-    "static/js/main.3563fbb0.js"
+    "static/css/main.71251b4f.css",
+    "static/js/main.528110ac.js"
   ]
 }
