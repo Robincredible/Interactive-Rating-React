@@ -234,7 +234,7 @@ class Rating extends React.Component{
         this.setState({
           showNotif: false
         })
-      }, 1500);
+      }, 9000);
     }
 
   }
