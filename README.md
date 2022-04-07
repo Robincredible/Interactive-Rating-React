@@ -1,5 +1,5 @@
 
-#Interactive Rating Component Using React
+# Interactive Rating Component Using React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This is my first time using react on a project and it has been an honor in using assets from [Frontend Mentor](https://www.frontendmentor.io/) to create it.
 
